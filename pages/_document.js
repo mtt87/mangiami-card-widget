@@ -13,8 +13,19 @@ class MyDocument extends Document {
         <Head>
           <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <link rel="stylesheet" href="/static/index.css" />
+          <script
+            type="text/javascript"
+            src="/static/iframeResizer.contentWindow.min.js"
+          />
         </Head>
-        <body style={{ display: 'flex', margin: 0, padding: 0, flexDirection: 'column' }}>
+        <body
+          style={{
+            display: 'flex',
+            margin: 0,
+            padding: 0,
+            flexDirection: 'column',
+          }}
+        >
           <Main />
           <NextScript />
         </body>

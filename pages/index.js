@@ -12,7 +12,7 @@ const Home = () => {
   if (id) {
     return (
       <Flex width={1} justifyContent="center">
-        <Box px={2} width={[1, 360]}>
+        <Box px={2} width={[1, 400]}>
           <CardFoodRestaurant foodImageId={id} />
         </Box>
       </Flex>
@@ -20,9 +20,9 @@ const Home = () => {
   }
   if (ids.length > 0) {
     return (
-      <Flex width={1} justifyContent="center">
+      <Flex flexDirection={["column", "row"]} width={1} justifyContent="center">
         {ids.map(i => (
-          <Box key={i} px={2} width={[1, 360]}>
+          <Box key={i} px={[1, 2]} py={2} width={[1, 400]}>
             <CardFoodRestaurant foodImageId={i} />
           </Box>
         ))}

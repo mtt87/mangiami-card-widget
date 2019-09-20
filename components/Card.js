@@ -5,7 +5,6 @@ import slugify from 'slugify';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { Colors } from '../theme';
-import RestaurantOpenClose from './RestaurantOpenClose';
 
 const GET_FOOD_IMAGE = gql`
   query getFoodImage($id: ID!) {
@@ -18,7 +17,6 @@ const GET_FOOD_IMAGE = gql`
         name
         logo
         cuisineType
-        tradingHours
       }
     }
   }
@@ -65,18 +63,11 @@ const CardFoodRestaurant = ({ foodImageId }) => {
               <Text lineHeight={1.3} color={Colors.GREY} fontSize={1}>
                 {Restaurant.cuisineType}
               </Text>
-              <Flex flexDirection="row">
-                <RestaurantOpenClose
-                  withIcon={false}
-                  tradingHours={Restaurant.tradingHours}
-                  fontSize={1}
-                />
-              </Flex>
             </Flex>
           </Flex>
         </Box>
         <Flex flexDirection="column">
-          <Box style={{ position: 'relative' }}>
+          <Box width={1}>
             <img
               alt={title}
               src={imageUrl}
@@ -101,7 +92,7 @@ const CardFoodRestaurant = ({ foodImageId }) => {
               </Text>
               {price > 0 && (
                 <Text
-                  width="96px"
+                  width={110}
                   fontWeight="600"
                   textAlign="right"
                   color={Colors.RED}
